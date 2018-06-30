@@ -8,60 +8,53 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page5">
-  <form id="signup-form3">
-    <ion-list id="signup-list3">
-      <ion-item id="signup-input7">
-        <ion-label>
-          First Name
-        </ion-label>
-        <ion-input type="text" placeholder="" name="firstname"></ion-input>
+<ion-content padding id="signup">
+  <form id="signup-form" name="signup">
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" placeholder="First name" name="firstname" [(ngModel)]="data.firstname"></ion-input>
       </ion-item>
-      <ion-item id="signup-input10">
-        <ion-label>
-          Last Name
-        </ion-label>
-        <ion-input type="text" placeholder="" name="lastname"></ion-input>
+      <ion-item>
+        <ion-input type="text" placeholder="Last Name" name="lastname" [(ngModel)]="data.lastname"></ion-input>
       </ion-item>
       <ion-item id="signup-input8">
-        <ion-label>
-          Email
-        </ion-label>
-        <ion-input type="email" placeholder="" name="email"></ion-input>
+        <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="data.email"></ion-input>
       </ion-item>
-      <ion-item id="signup-input9">
-        <ion-label>
-          Password
-        </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+      <ion-item>
+        <ion-input type="Password" placeholder="Password" name="password" [(ngModel)]="data.password"></ion-input>
       </ion-item>
-      <ion-item id="signup-input11">
+      <ion-item>
         <ion-label>
           Birthday
         </ion-label>
-        <ion-input type="date" placeholder="" name="birthday"></ion-input>
+        <ion-datetime displayFormat="DD MMM YYYY" type="date" name="birthday" [(ngModel)]="data.birthday"></ion-datetime>
       </ion-item>
-      <ion-item id="signup-select1">
+      <ion-item>
         <ion-label>
           Gender
         </ion-label>
-        <ion-select name="gender">
-          <ion-option>
+        <ion-select name="gender" [(ngModel)]="data.gender">
+          <ion-option value="Male">
             Male
           </ion-option>
-          <ion-option>
+          <ion-option value="Female">
             Female
           </ion-option>
         </ion-select>
       </ion-item>
-      <ion-item id="signup-select2">
+      <ion-item>
+        <ion-input type="text" placeholder="City" name="city" [(ngModel)]="data.city"></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-label>
-          country
+          Country
         </ion-label>
-        <ion-select name="country"></ion-select>
+        <ion-select name="country" [(ngModel)]="data.country">
+          <ion-option *ngFor="let country of countries" [value]="country.codigo">{{ country.nombre }}</ion-option>
+        </ion-select>
       </ion-item>
     </ion-list>
-    <button id="signup-button5" ion-button color="stable" block>
+    <button id="signup-button" (click)="submit()" ion-button color="stable" block>
       Sign up
     </button>
   </form>

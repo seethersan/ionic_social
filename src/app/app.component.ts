@@ -6,6 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login'
+import { SignUpPage } from '../pages/signup/signup'
 
 
 
@@ -27,5 +29,13 @@ export class MyApp {
   goToHome(params){
     if (!params) params = {};
     this.navCtrl.setRoot(HomePage);
+  }
+  goToLogin(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(LoginPage);
+  }
+  goToSignUp(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(SignUpPage);
   }
 }
