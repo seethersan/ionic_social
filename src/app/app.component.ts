@@ -5,9 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 
-import { HomePage } from '../pages/home/home';
-import { LoginPage } from '../pages/login/login'
-import { SignUpPage } from '../pages/signup/signup'
+import { WelcomePage } from '../pages/welcome/welcome';
 
 
 
@@ -16,7 +14,7 @@ import { SignUpPage } from '../pages/signup/signup'
 })
 export class MyApp {
   @ViewChild(Nav) navCtrl: Nav;
-    rootPage:any = HomePage;
+    rootPage:any = WelcomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -26,16 +24,8 @@ export class MyApp {
       splashScreen.hide();
     });
   }
-  goToHome(params){
+  goToWelcome(params){
     if (!params) params = {};
-    this.navCtrl.setRoot(HomePage);
-  }
-  goToLogin(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(LoginPage);
-  }
-  goToSignUp(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(SignUpPage);
+    this.navCtrl.setRoot(WelcomePage);
   }
 }
