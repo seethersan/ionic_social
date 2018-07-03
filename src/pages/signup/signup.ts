@@ -38,7 +38,7 @@ export class SignUpPage {
 	}
 
 	submit(){
-		var link = "http://192.168.1.34:9000/api/persona";
+		var link = "http://104.42.189.7 :9000/api/persona";
 		var myData = JSON.stringify({
 			firstname: this.data.firstname,
 			lastname: this.data.lastname,

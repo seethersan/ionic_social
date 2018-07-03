@@ -13,7 +13,7 @@ export class PaisServiceProvider {
   constructor(public http: HttpClient) {}
 
   getPaises(){
-  	return this.http.get('http://192.168.1.34:9000/api/pais');
+  	return this.http.get('http://104.42.189.7 :9000/api/pais');
   }
 
 }
