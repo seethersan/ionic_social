@@ -7,5 +7,15 @@
 
 <ion-content padding>
   <h2>Welcome to Social Project</h2>
+  <ion-list *ngFor="let persona of personas">
+    <ion-item-sliding >
+      <ion-item>
+        <h2>{{ persona.firstname }} {{ persona.lastname }}</h2>
+      </ion-item>
+      <ion-item>
+        <h3>{{ persona.description }}</h3>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
   <button ion-button color="primary" (click)="logout()">Logout</button>
 </ion-content>

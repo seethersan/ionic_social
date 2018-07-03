@@ -21,10 +21,11 @@ export class AuthServiceProvider {
     return new Promise((resolve, reject) => {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://104.42.189.7 :9000/oauth/token', JSON.stringify(credentials), {headers: headers}).subscribe(res => { 
+      this.http.post('http://104.42.189.7/oauth/token', JSON.stringify(credentials), {headers: headers}).subscribe(res => { 
         let data = res.json();
-        this.token = data.token;
-        this.storage.set('token', data.token);
+        let token_type = data['token_type'];
+        this.token = token_type.concat(" ", data['access_token']);
+        this.storage.set('token', this.token);
         resolve(data);
 
         resolve(res.json());
